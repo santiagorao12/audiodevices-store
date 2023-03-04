@@ -1,8 +1,8 @@
-import { SanityClient } from "@sanity/client";
-import { ImageUrlBuilder } from "next-sanity-image";
+import sanityClient  from "@sanity/client";
+import createImageUrlBuilder from '@sanity/image-url';
 
 export const client = sanityClient({
-    projectid: '1hwkywi2',
+    projectId: '1hwkywi2',
     dataset: 'production',
     apiVersion: '2022-04-04',
     useCdn: true,
@@ -10,7 +10,7 @@ export const client = sanityClient({
 });
 
 //to use the sanity images
-const builder = ImageUrlBuilder(client);
+const builder = createImageUrlBuilder(client);
 
 
 //sanity giving access to url where it is stored
